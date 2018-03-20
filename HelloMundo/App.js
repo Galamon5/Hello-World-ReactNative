@@ -5,7 +5,10 @@ import TextoComponent from './TextoComponente';
 export default class App extends React.Component {
   constructor(){
     super()//hace obligatoriamente el constructor antes de hacer cualquier otra cosa
-    this.state={status: false}
+    this.state={
+      status: false,
+      data: null
+    }
   }
   clicked(){
     this.setState({
