@@ -1,63 +1,50 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import TextoComponent from './TextoComponente';
-
+import { StyleSheet, Text, View } from 'react-native';
 export default class App extends React.Component {
   constructor(){
-    super()//hace obligatoriamente el constructor antes de hacer cualquier otra cosa
+    super();
     this.state={
-      status: false,
-      data: null
+      numero: 3
     }
-  }
-  clicked(){
-    this.setState({
-      status:!this.state.status
-    })
   }
   render() {
     return (
-      <View style={styles.container}>
-      <ComponenteHijo status={this.state.status}/>
-        <Button
-          onPress={this.clicked.bind(this)}
-          title = "Puchame"
-          color = 'blue'
-        />
-        <TextoComponent/>
-        <Text style={styles.texto}>Hola Mundo! .________.!!</Text>
+      <View style={styles.container} >
+        <View style={styles.box1}>
+          <Text>Contador</Text>
+        </View>
+        <View style={styles.box2}>
+      {/*    <Text>2</Text>*/}
+          <Text>{this.state.numero}</Text>
+        </View>
+        <View style={styles.box3}/>
       </View>
     );
   }
 }
-export class ComponenteHijo extends React.Component{
-  render(){
-    return(
-      <View>
-      <View style={this.props.status ? styles.on : styles.off}/>
-      </View>
-    );
-  }
-}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'red'
+
   },
-  on: {
-    width:100,
-    height:100,
-    backgroundColor: 'red',
+  box1: {
+    flex: 1,
+    backgroundColor: 'gray',
+    justifyContent:'center',
+    alignItems: 'center'
   },
-  off: {
-    width:100,
-    height:100,
-    backgroundColor: 'black',
+  box2: {
+    flex: 1,
+    backgroundColor: 'green',
+    justifyContent:'center',
+    alignItems: 'center'
   },
-  texto: {
-    fontSize: 20,
-    color: 'green',
-  },
+  box3: {
+    flex: 1,
+    backgroundColor: 'blue',
+    justifyContent:'center',
+    alignItems: 'center'
+  }
 });
