@@ -1,18 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-export default class Body extends React.Component {
+export default class Final extends React.Component {
   render() {
     return (
       <View style={styles.container} >
-          <Text>{this.props.numero}</Text>
+          <Button
+          title="Aumentar"
+          onPress={()=>{this.props.sumar();}}/>
+          <Button
+          title="Disminuir"
+          onPress={()=>{this.props.restar();}}/>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 3,
-    backgroundColor: 'green',
+    flex: 1,
+    backgroundColor: 'blue',
     justifyContent:'center',
     alignItems: 'center'
   }

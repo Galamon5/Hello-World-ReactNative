@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import Inicio from '././inicio';
 import Body from '././body';
+import Final from '././final';
 export default class App extends React.Component {
   constructor(){
     super();
@@ -24,10 +25,11 @@ export default class App extends React.Component {
       <View style={styles.container} >
         <Inicio mame="Calculadora"/>
         <Body numero = {this.state.numero}/>
-        <View style={styles.box3}>
+        <Final sumar={this.aumentar} restar={this.disminuir}/>
+      {/* <View style={styles.box3}>
           <Button title="Aumentar" onPress={()=>{this.aumentar();}}/>
           <Button title="Disminuye" onPress={()=>{this.disminuir();}}/>
-        </View>
+        </View>*/}
       </View>
     );
   }
