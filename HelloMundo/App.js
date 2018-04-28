@@ -1,11 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 export default class App extends React.Component {
   constructor(){
     super();
     this.state={
-      numero: 3
+      numero: 0
     }
+  }
+  aumentar = () =>{
+    this.setState({
+      numero: this.state.numero+1
+    })
+  }
+  disminuir = () =>{
+    this.setState({
+      numero: this.state.numero-1
+    })
   }
   render() {
     return (
@@ -14,10 +24,12 @@ export default class App extends React.Component {
           <Text>Contador</Text>
         </View>
         <View style={styles.box2}>
-      {/*    <Text>2</Text>*/}
           <Text>{this.state.numero}</Text>
         </View>
-        <View style={styles.box3}/>
+        <View style={styles.box3}>
+          <Button title="Aumentar" onPress={()=>{this.aumentar()}}/>
+          <Button title="Disminuye" onPress={()=>{this.disminuir()}}/>
+        </View>
       </View>
     );
   }
@@ -47,4 +59,5 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems: 'center'
   }
+  
 });
