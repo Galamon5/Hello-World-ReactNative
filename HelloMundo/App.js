@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import Inicio from '././inicio';
+import Body from '././body';
 export default class App extends React.Component {
   constructor(){
     super();
@@ -20,15 +22,11 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container} >
-        <View style={styles.box1}>
-          <Text>Contador</Text>
-        </View>
-        <View style={styles.box2}>
-          <Text>{this.state.numero}</Text>
-        </View>
+        <Inicio mame="Calculadora"/>
+        <Body numero = {this.state.numero}/>
         <View style={styles.box3}>
-          <Button title="Aumentar" onPress={()=>{this.aumentar()}}/>
-          <Button title="Disminuye" onPress={()=>{this.disminuir()}}/>
+          <Button title="Aumentar" onPress={()=>{this.aumentar();}}/>
+          <Button title="Disminuye" onPress={()=>{this.disminuir();}}/>
         </View>
       </View>
     );
@@ -59,5 +57,5 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems: 'center'
   }
-  
+
 });
