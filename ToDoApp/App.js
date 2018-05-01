@@ -2,6 +2,12 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      tareas: [],
+    };
+  }
   render() {
     return (
       <View style={styles.container}>
